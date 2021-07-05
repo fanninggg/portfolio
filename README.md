@@ -1,6 +1,8 @@
 # Welcome to my portfolio's repository
 
-The portfolio itself can be found here [http://www.benfanning.co.uk/](http://www.benfanning.co.uk/).
+Feel free to have a look around and see how it all works, I'd recommend starting in the src/components folder. 
+
+If you are viewing this page on github directly, the portfolio itself can be found here [http://www.benfanning.co.uk/](http://www.benfanning.co.uk/).
 
 ## Technologies
 
