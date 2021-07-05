@@ -1,0 +1,24 @@
+$dark: #121212;
+$light: rgba(255, 255, 255, 1);
+
+body {
+  margin: 0;
+  &.dark {
+    --background: #{$dark};
+    --secondary-background: #282828;
+    --tertiary-background: #050505;
+    --text: #{$light};
+    --white-text: #{$light};
+    background-color: #121212;
+    color: rgba(255, 255, 255, 0.87);
+  }
+  &.light {
+    --background: #{$light};
+    --secondary-background: rgb(240, 240, 240);
+    --tertiary-background: #72f;
+    --text: #{$dark};
+    --white-text: #fff;
+    background-color: rgba(255, 255, 255, 0.87);
+    color: #121212;
+  }
+}

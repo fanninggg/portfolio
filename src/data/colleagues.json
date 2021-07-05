@@ -1,0 +1,32 @@
+{
+  "testimonials": [
+    {
+      "id": 0,
+      "author": "Ben Wright",
+      "position": "Partner - Hoxton Digital",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "avatar": "https://kitt.lewagon.com/placeholder/users/ben1991wright"
+    },
+    {
+      "id": 1,
+      "author": "Ife Odugbesan",
+      "position": "Freelance Front End Developer",
+      "content": "The best cyclist around",
+      "avatar": "https://kitt.lewagon.com/placeholder/users/ifeodugbesan"
+    },
+    {
+      "id": 2,
+      "author": "Seb Saunier",
+      "position": "CTO - Le Wagon",
+      "content": "This guy is a better developer than me!",
+      "avatar": "https://kitt.lewagon.com/placeholder/users/ssaunier"
+    }, 
+    {
+      "id": 3,
+      "author": "Leonard Percival",
+      "position": "Partner - Hoxton Digital",
+      "content": "Reliable man",
+      "avatar": "https://kitt.lewagon.com/placeholder/users/oceantidote"
+    }
+  ]
+}

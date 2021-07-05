@@ -1,0 +1,126 @@
+.landing {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.logo {
+  .f-path {
+    fill: var(--background);
+  }
+}
+
+.landing-title {
+  color: var(--text);
+  font-size: 110px;
+  font-weight: 700;
+  line-height: 130px;
+  text-align: center;
+  margin: 60px 0;
+}
+
+.highlight {
+  --highlight-background: linear-gradient(145deg, #72f, #c1b);
+  background: linear-gradient(145deg, #72f, #c1b);
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  -webkit-background-clip: text;
+  background-size: 200% 200%;
+  -webkit-animation: animateText 5s ease infinite;
+  -moz-animation: animateText 5s ease infinite;
+  animation: animateText 5s ease infinite;
+}
+
+@-webkit-keyframes animateText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes animateText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes animateText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.landing-btn {
+  font-size: 22px;
+  width: 220px;
+  margin: 120px auto 0 auto;
+}
+
+.text-link {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 300; 
+  margin: 20px auto;
+  width: 220px;
+  cursor: pointer;
+}
+
+.react-pdf__Page__canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.code-modal {
+  .modal-dialog {
+    max-width: 90vw;
+  }
+  .modal-body {
+    height: 90vh;
+  }
+  iframe {
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-title {
+    font-size: 80px;
+    line-height: 95px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-title {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  .navbar {
+    margin-top: 30px;
+  }
+}

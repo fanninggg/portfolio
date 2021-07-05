@@ -1,0 +1,17 @@
+#game-board {
+  background-color: #050505;
+  display: grid;
+  grid-template-columns: repeat(80, 1fr);
+  grid-template-rows: repeat(40, 1fr);
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+}
+.snake {
+  background: linear-gradient(135deg, #72f, #c1b);
+  border: 1px solid #282828;
+}
+.food {
+  background-color: #fff;
+  border: 1px solid #282828;
+}

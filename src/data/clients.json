@@ -1,0 +1,32 @@
+{
+  "testimonials": [
+    {
+      "id": 0,
+      "author": "Philippa Smith",
+      "position": "Managing Director - Silver Swan Recruitment",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmY9IZriPfQZHsechw2pWrcHeB-Q1Ha_dxAg&usqp=CAU"
+    },
+    {
+      "id": 1,
+      "author": "Nathan Key",
+      "position": "Strategy Consultant - Javelin Group",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "avatar": "https://media-exp1.licdn.com/dms/image/C4E03AQG6vCSw2uUh6Q/profile-displayphoto-shrink_100_100/0/1517007309994?e=1620259200&v=beta&t=jpSTW8RX4TmlcOiKAVI-WoSQg_vh7wmsduMeFamTZhc"
+    },
+    {
+      "id": 2,
+      "author": "Pierre Rakotovo",
+      "position": "CEO & CoFounder - Idopia",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "avatar": "https://media-exp1.licdn.com/dms/image/C4D03AQGrpeQvbFyqEw/profile-displayphoto-shrink_100_100/0/1574157328708?e=1620259200&v=beta&t=Iqf6hI6BWr7TNLEp4Xs_dBSXbV6LuN6_SePGehwpXnI"
+    }, 
+    {
+      "id": 3,
+      "author": "David Tweedie",
+      "position": "Founder - Share n' Wear",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "avatar": "https://media-exp1.licdn.com/dms/image/C4E03AQF7OQK6ABl2iA/profile-displayphoto-shrink_100_100/0/1579813143505?e=1620259200&v=beta&t=zzSMyQWzky56LpHpSH8kwPrlm2K2XJc1a3sc9aAM4dc"
+    }
+  ]
+}

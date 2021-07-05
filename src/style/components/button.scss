@@ -1,0 +1,22 @@
+.btn-linear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 24px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  letter-spacing: -0.4px;
+  background: linear-gradient(135deg, #72f, #c1b);
+  font-family: "Exo 2", sans-serif;
+  cursor: pointer;
+  color: #fff;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+}

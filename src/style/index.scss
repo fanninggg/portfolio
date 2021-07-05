@@ -1,0 +1,51 @@
+@import "~bootstrap/scss/bootstrap";
+@import "components";
+
+h1,
+h2,
+h3 {
+  font-family: "Exo 2", sans-serif;
+  line-height: 1.5;
+}
+
+p {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 20px;
+  color: var(--text);
+}
+
+.linear-link {
+  --highlight-background: linear-gradient(145deg, #72f, #c1b);
+  background: linear-gradient(145deg, #72f, #c1b);
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  -webkit-background-clip: text;
+  font-weight: bold;
+  transition: color 0.4s ease-in-out;
+  display: inline-block;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.max-width {
+  max-width: 1200px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .max-width {
+    max-width: 90%;
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 18px;
+  }
+}

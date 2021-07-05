@@ -1,0 +1,133 @@
+.testimonials {
+  padding: 120px 0;
+  border-top: 1px solid var(--secondary-background);
+  text-align: center;
+  position: relative;
+  h2 {
+    font-size: 32px;
+  }
+  .testimonials-tagline {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+}
+
+.testimonials-dropdown {
+  position: relative;
+  cursor: pointer;
+  width: 160px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.testimonials-arrow {
+  fill: var(--text);
+}
+
+.testimonials-dropdown-content {
+  position: absolute;
+  width: 100%;
+  top: 34px;
+  left: calc(50% - 80px);
+  background-color: var(--background);
+  min-width: 160px;
+  z-index: 1;
+  border: 1px solid var(--secondary-background);
+  border-radius: 4px;
+  p {
+    margin: 0;
+    padding: 4px 0;
+    width: 100%;
+    background-color: var(--background);
+    &:hover {
+      background-color: var(--secondary-background);
+    }
+    &.active {
+      background-color: var(--secondary-background);
+    }
+  }
+}
+
+.testimonials-carousel-holder {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonials-carousel {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  height: 400px;
+  padding-bottom: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+  }
+  .content {
+    font-weight: lighter;
+    font-size: 24px;
+    margin-bottom: 0px;
+    color: var(--text);
+  }
+  .author {
+    font-weight: 500;
+    margin: 0 0 4px 0;
+    color: var(--text);
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .position {
+    margin: 0;
+    font-size: 18px;
+    line-height: 20px;
+  }
+  &.active {
+    display: flex;
+  }
+}
+
+.carousel-item-left,
+.carousel-item-right,
+.carousel-item-next {
+  display: flex;
+}
+
+.carousel-caption {
+  bottom: 40px;
+  position: static;
+}
+
+ol.carousel-indicators li {
+  min-width: 14px;
+  min-height: 14px;
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border: 2px solid var(--text);
+  background: transparent;
+  border-radius: 50%;
+  &.active {
+    background: linear-gradient(145deg, #72f, #c1b);
+    border: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-carousel {
+    width: 95%;
+  }
+  .testimonial {
+    height: 480px;
+    .position {
+      font-size: 16px;
+    }
+  }
+}
