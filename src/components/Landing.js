@@ -47,7 +47,7 @@ export const Landing = () => {
       </Modal>
       <Modal show={showCode} onHide={handleCodeClose} animation={false} className="code-modal">
         <Modal.Body>
-          <iframe src="https://github1s.com/fanninggg/Portfolio-API" title="Website Code" allow></iframe>
+          <iframe src="https://github1s.com/fanninggg/portfolio" title="Website Code" allow></iframe>
         </Modal.Body>
       </Modal>
     </div>
