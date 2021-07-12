@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import { Landing, About, Projects, Testimonials, Footer } from './components'
 import React, { useEffect } from 'react'
 import AOS from 'aos';

@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
 import { Modal, Carousel } from 'react-bootstrap';
 
 export const Projects = () => {
-  const data = require('../data/projects.json');
+  const [data, setData] = useState([])
   const [show, setShow] = useState(false);
-  const [selectedProject, setselectedProject] = useState({});
+  const [selectedProject, setSelectedProject] = useState({});
+
+  useEffect(() => {
+    // Fetch basic info about all projects from API
+    fetch("https://pacific-badlands-49664.herokuapp.com/api/v1/projects/")
+      .then(response => response.json())
+      .then(data => setData(data))
+  }, [])
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -19,38 +26,42 @@ export const Projects = () => {
   }
 
   const handleClick = (id) => {
-    setselectedProject(data.projects[id])
-    setShow(true);
+    // Fetch detailed response for one project from API
+    fetch(`https://pacific-badlands-49664.herokuapp.com/api/v1/projects/${id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'X-User-Email': process.env.REACT_APP_EMAIL,
+        'X-User-Token': process.env.REACT_APP_TOKEN
+      },
+    })
+      .then(response => response.json())
+      .then(data => setSelectedProject(data))
+      .then(setShow(true))
   }
 
   const renderProjects = () => {
-    const projectCards = data.projects.slice(1, data.projects.length).map((project, index) => {
-      return (
-        <div key={project.id} data-project={project.id} className="project" data-aos={determineFadeDirection(index + 1)}>
-          <img src={project.splash} alt="" className="project-img" />
-          <div className="project-info">
-            <h3>{project.tagline}</h3>
-            <motion.button whileHover={{ scale: 1.1 }} className="btn-linear" onClick={() => handleClick(project.id)}>See More</motion.button>
+    if (data.length > 0) {
+      const projectCards = data.map((project, index) => {
+        return (
+          <div key={project.id} data-project={project.id} className="project" data-aos={determineFadeDirection(index + 1)}>
+            <img src={project.splash} alt="" className="project-img" />
+            <div className="project-info">
+              <h3>{project.tagline}</h3>
+              <motion.button whileHover={{ scale: 1.1 }} className="btn-linear" onClick={() => handleClick(project.id)}>See More</motion.button>
+            </div>
           </div>
+        )
+      })
+      return (
+        <div className="projects-grid">
+          {projectCards}
         </div>
       )
-    })
-    return (
-      <div className="projects-grid">
-        <div key={data.projects[0].id} data-project={data.projects[0].id} className="project" data-aos={determineFadeDirection(0)}>
-          <img src={data.projects[0].splash} alt="" className="project-img" />
-          <div className="project-info">
-            <h3>{data.projects[0].tagline}</h3>
-            <motion.button whileHover={{ scale: 1.1 }} className="btn-linear" onClick={() => handleClick(data.projects[0].id)}>See More</motion.button>
-          </div>
-        </div>
-        {projectCards}
-      </div>
-    )
+    }
   }
 
   const renderCarouselOrVideo = () => {
-    if (selectedProject.id === 0) {
+    if (selectedProject.id === 2) {
       return (
         <video className="video" controls>
           <source src="https://i.imgur.com/7Im5zPd.mp4" type="video/mp4"></source>
@@ -61,7 +72,7 @@ export const Projects = () => {
         return (
           <Carousel.Item key={index}>
             <img
-              src={image}
+              src={image.href}
               alt="Test"
             />
           </Carousel.Item>
