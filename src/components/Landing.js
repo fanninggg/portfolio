@@ -10,10 +10,6 @@ export const Landing = () => {
   const [showResume, setShowResume] = useState(false);
   const [showCode, setShowCode] = useState(false);
 
-  const onDocumentLoadSuccess = () => {
-    console.log('Upload succesful')
-  }
-
   const handleResumeClose = () => setShowResume(false);
   const handleResumeShow = () => setShowResume(true);
 
@@ -21,9 +17,6 @@ export const Landing = () => {
   const handleCodeShow = () => setShowCode(true);
 
   return (
-    // ToDo's:
-    // Use API to get info
-    // Code Snippet sections
     <div className="landing max-width portfolio-section">
       <div className="navbar">
         <LogoSVG />
@@ -39,7 +32,6 @@ export const Landing = () => {
           <Document
             file={resume}
             loading={"Resume loading..."}
-            onLoadSuccess={onDocumentLoadSuccess}
           >
             <Page pageNumber={1} />
           </Document>

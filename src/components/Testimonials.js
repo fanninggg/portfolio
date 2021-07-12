@@ -3,9 +3,23 @@ import { Carousel } from 'react-bootstrap';
 import { DownSVG } from './svgs'
 
 export const Testimonials = () => {
-  const students = require('../data/students.json');
-  const colleagues = require('../data/colleagues.json');
-  const clients = require('../data/clients.json');
+
+  const [clients, setClients] = useState([])
+  const [students, setStudents] = useState([]);
+  const [colleagues, setColleagues] = useState([]);
+
+  useEffect(() => {
+    fetch("https://pacific-badlands-49664.herokuapp.com/api/v1/testimonials/clients")
+      .then(response => response.json())
+      .then(data => setClients(data))
+    fetch("https://pacific-badlands-49664.herokuapp.com/api/v1/testimonials/students")
+      .then(response => response.json())
+      .then(data => setStudents(data))
+    fetch("https://pacific-badlands-49664.herokuapp.com/api/v1/testimonials/colleagues")
+      .then(response => response.json())
+      .then(data => setColleagues(data))
+  }, [])
+
 
   const [group, setGroup] = useState('students');
   const handleGroupChange = (group) => {
@@ -21,23 +35,25 @@ export const Testimonials = () => {
   }
 
   const renderCarouselItems = (items, name) => {
-    const testimonials = items.testimonials.map((testimonial) => {
+    if (items.length > 0) {
+      const testimonials = items.map((testimonial) => {
+        return (
+          <Carousel.Item key={testimonial.id} className="testimonial">
+            <img src={testimonial.avatar} alt="" className="" />
+            <h6 className="content">{testimonial.content}</h6>
+            <Carousel.Caption>
+              <p className="author">{testimonial.author}</p>
+              <p className="position">{testimonial.position}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        )
+      })
       return (
-        <Carousel.Item key={testimonial.id} className="testimonial">
-          <img src={testimonial.avatar} alt="" className="" />
-          <h6 className="content">{testimonial.content}</h6>
-          <Carousel.Caption>
-            <p className="author">{testimonial.author}</p>
-            <p className="position">{testimonial.position}</p>
-          </Carousel.Caption>
-        </Carousel.Item>
+        <Carousel indicators={true} controls={false} interval={6000} className={`testimonials-carousel ${name}-carousel`}>
+          {testimonials}
+        </Carousel>
       )
-    })
-    return (
-      <Carousel indicators={true} controls={false} interval={6000} className={`testimonials-carousel ${name}-carousel`}>
-        {testimonials}
-      </Carousel>
-    )
+    }
   }
 
   return (
