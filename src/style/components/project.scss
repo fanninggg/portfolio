@@ -165,15 +165,15 @@
 }
 
 @media (max-width: 768px) {
+  .project-modal .modal-dialog {
+    margin-top: 10vh;
+  }
   .project {
     height: 30vw;
   }
 }
 
 @media (max-width: 480px) {
-  .project-modal .modal-dialog {
-    margin-top: 10vh;
-  }
   .project-modal .modal-body {
     height: 210px;
   }
