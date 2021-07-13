@@ -7,6 +7,7 @@ export const Testimonials = () => {
   const [clients, setClients] = useState([])
   const [students, setStudents] = useState([]);
   const [colleagues, setColleagues] = useState([]);
+  const [group, setGroup] = useState('clients');
 
   useEffect(() => {
     fetch("https://pacific-badlands-49664.herokuapp.com/api/v1/testimonials/clients")
@@ -20,8 +21,6 @@ export const Testimonials = () => {
       .then(data => setColleagues(data))
   }, [])
 
-
-  const [group, setGroup] = useState('students');
   const handleGroupChange = (group) => {
     setGroup(group);
     document.querySelectorAll('.testimonials-carousel').forEach((carousel) => {
@@ -49,8 +48,7 @@ export const Testimonials = () => {
         )
       })
       return (
-        <Carousel indicators={true} controls={false} interval={99999000} className={`testimonials-carousel ${name}-carousel`}>
-          {/* <Carousel indicators={true} controls={false} interval={6000} className={`testimonials-carousel ${name}-carousel`}> */}
+        <Carousel indicators={true} controls={false} interval={6000} className={`testimonials-carousel ${name}-carousel`}>
           {testimonials}
         </Carousel>
       )
@@ -64,15 +62,15 @@ export const Testimonials = () => {
       <div className="testimonials-dropdown" onClick={(e) => handleDropdownToggle(e)}>
         <p>{group[0].toUpperCase() + group.substring(1)} <DownSVG /></p>
         <div className="testimonials-dropdown-content d-none">
+          <p onClick={() => handleGroupChange('clients')}>Clients</p>
           <p onClick={() => handleGroupChange('students')}>Students</p>
           <p onClick={() => handleGroupChange('colleagues')}>Colleagues</p>
-          <p onClick={() => handleGroupChange('clients')}>Clients</p>
         </div>
       </div>
       <div className="testimonials-carousel-holder">
+        {renderCarouselItems(clients, 'clients')}
         {renderCarouselItems(students, 'students')}
         {renderCarouselItems(colleagues, 'colleagues')}
-        {renderCarouselItems(clients, 'clients')}
       </div>
     </div>
   )
