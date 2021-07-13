@@ -55,18 +55,18 @@
 
 // ========== Modal ==========
 
-.modal-dialog {
+.project-modal .modal-dialog {
   max-width: 700px;
 }
 
-.modal-body {
+.project-modal .modal-body {
   padding: 0;
   height: 370px;
   width: 100%;
   position: relative;
 }
 
-.modal-details {
+.project-modal .modal-details {
   background-color: var(--background);
   padding: 35px 25px 90px 25px;
   position: relative;
@@ -82,7 +82,7 @@
   }
 }
 
-.modal-divider {
+.project-modal .modal-divider {
   height: 1px;
   background: linear-gradient(145deg, #72f, #c1b);
   width: 100%;
@@ -93,7 +93,7 @@
   font-weight: 400;
 }
 
-.modal-actions {
+.project-modal .modal-actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -165,15 +165,18 @@
 }
 
 @media (max-width: 768px) {
-  .project:last-of-type {
-    display: none;
-  }
   .project {
     height: 30vw;
   }
 }
 
 @media (max-width: 480px) {
+  .project-modal .modal-dialog {
+    margin-top: 10vh;
+  }
+  .project-modal .modal-body {
+    height: 210px;
+  }
   .project-details p {
     font-size: 16px;
   }

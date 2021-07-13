@@ -125,9 +125,11 @@ ol.carousel-indicators li {
     width: 95%;
   }
   .testimonial {
-    height: 480px;
     .position {
       font-size: 16px;
+    }
+    .content {
+      font-size: 18px
     }
   }
 }
