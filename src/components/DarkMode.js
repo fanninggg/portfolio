@@ -7,15 +7,19 @@ export const DarkMode = () => {
   let theme
 
   const toggleSwitch = () => {
+    console.log('switching')
+    console.log('theme =>', theme)
+    console.log('current mode =>', darkMode)
+    console.log('new mode =>', darkMode)
     setdarkMode(!darkMode)
-    if (theme === "dark") {
-      document.body.classList.replace("dark", "light")
-      localStorage.setItem("theme", "light")
-      theme = "light"
-    } else {
+    if (theme === "light") {
       document.body.classList.replace("light", "dark")
       localStorage.setItem("theme", "dark")
       theme = "dark"
+    } else {
+      document.body.classList.replace("dark", "light")
+      localStorage.setItem("theme", "light")
+      theme = "light"
     }
   }
 
