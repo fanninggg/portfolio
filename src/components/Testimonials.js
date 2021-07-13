@@ -49,7 +49,8 @@ export const Testimonials = () => {
         )
       })
       return (
-        <Carousel indicators={true} controls={false} interval={6000} className={`testimonials-carousel ${name}-carousel`}>
+        <Carousel indicators={true} controls={false} interval={99999000} className={`testimonials-carousel ${name}-carousel`}>
+          {/* <Carousel indicators={true} controls={false} interval={6000} className={`testimonials-carousel ${name}-carousel`}> */}
           {testimonials}
         </Carousel>
       )

@@ -6,6 +6,14 @@ export const Projects = () => {
   const [data, setData] = useState([])
   const [show, setShow] = useState(false);
   const [selectedProject, setSelectedProject] = useState({});
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleReize = () => {
+    setWindowWidth(window.innerWidth)
+  }
 
   useEffect(() => {
     // Fetch basic info about all projects from API
@@ -14,16 +22,18 @@ export const Projects = () => {
       .then(data => setData(data))
   }, [])
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   const determineFadeDirection = (index) => {
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     if (width < 769) return 'fade-up';
-    if (index === 0 || index === 3 || index === 6) return 'fade-left';
-    if (index === 2 || index === 5 || index === 8) return 'fade-right';
+    if (index === 1 || index === 4) return 'fade-left';
+    if (index === 3 || index === 6) return 'fade-right';
     return 'fade-up';
   }
+
+  window.addEventListener('resize', () => {
+    // Rerender projects with correct fade directions on window resize as well as refresh
+    handleReize();
+  })
 
   const handleClick = (id) => {
     // Fetch detailed response for one project from API
@@ -93,7 +103,7 @@ export const Projects = () => {
       <h2>My Recent Work</h2>
       <p>Here are a few of the projects I've worked on recently. Want to see more? <motion.a whileHover={{ scale: 1.05 }} href="mailto:fanninggg@gmail.com" className="linear-link" target="_blank">Email Me</motion.a></p>
       {renderProjects()}
-      <Modal show={show} onHide={handleClose} animation={false}>
+      <Modal show={show} onHide={handleClose} animation={false} className="project-modal">
         <Modal.Body>
           {renderCarouselOrVideo()}
           <div className="role">{selectedProject ? selectedProject.role : ''}</div>
