@@ -6,7 +6,7 @@ export const Testimonials = () => {
 
   const [clients, setClients] = useState([])
   const [students, setStudents] = useState([]);
-  const [colleagues, setColleagues] = useState([]);
+  // const [colleagues, setColleagues] = useState([]);
   const [group, setGroup] = useState('clients');
 
   useEffect(() => {
@@ -16,9 +16,9 @@ export const Testimonials = () => {
     fetch("https://pacific-badlands-49664.herokuapp.com/api/v1/testimonials/students")
       .then(response => response.json())
       .then(data => setStudents(data))
-    fetch("https://pacific-badlands-49664.herokuapp.com/api/v1/testimonials/colleagues")
-      .then(response => response.json())
-      .then(data => setColleagues(data))
+    // fetch("https://pacific-badlands-49664.herokuapp.com/api/v1/testimonials/colleagues")
+    //   .then(response => response.json())
+    //   .then(data => setColleagues(data))
   }, [])
 
   const handleGroupChange = (group) => {
@@ -64,13 +64,13 @@ export const Testimonials = () => {
         <div className="testimonials-dropdown-content d-none">
           <p onClick={() => handleGroupChange('clients')}>Clients</p>
           <p onClick={() => handleGroupChange('students')}>Students</p>
-          <p onClick={() => handleGroupChange('colleagues')}>Colleagues</p>
+          {/* <p onClick={() => handleGroupChange('colleagues')}>Colleagues</p> */}
         </div>
       </div>
       <div className="testimonials-carousel-holder">
         {renderCarouselItems(clients, 'clients')}
         {renderCarouselItems(students, 'students')}
-        {renderCarouselItems(colleagues, 'colleagues')}
+        {/* {renderCarouselItems(colleagues, 'colleagues')} */}
       </div>
     </div>
   )
