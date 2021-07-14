@@ -1,5 +1,5 @@
 import React from 'react'
-import { TeacherSVG, DeveloperSVG, ConsultantSVG } from './svgs'
+import { MentorSVG, DeveloperSVG, ConsultantSVG } from './svgs'
 
 export const About = () => {
   return (
@@ -12,8 +12,8 @@ export const About = () => {
       </div>
       <div className="skills">
         <div className="skill">
-          <TeacherSVG />
-          <h3>Teacher</h3>
+          <MentorSVG />
+          <h3>Mentor</h3>
           <p className="">I really enjoy helping people discover coding and improve their professional skills.</p>
           <p className="skill-subtitle">Things I enjoy teaching:</p>
           <p>Coding basics, advanced front-end</p>
