@@ -39,7 +39,7 @@ export const Testimonials = () => {
         return (
           <Carousel.Item key={testimonial.id} className="testimonial">
             <img src={testimonial.avatar} alt="" className="" />
-            <h6 className="content">{testimonial.content}</h6>
+            <p className="content">{testimonial.content}</p>
             <Carousel.Caption>
               <p className="author">{testimonial.author}</p>
               <p className="position">{testimonial.position}</p>
