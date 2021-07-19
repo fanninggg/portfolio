@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <div className="footer portfolio-section">
       <FooterLogoSVG />
-      <p className="max-width text-center">If you've got this far maybe you'd like to know more about me? <br /> We should <motion.a whileHover={{ scale: 1.05 }} href="mailto:fanning@hey.com" target="_blank">book in a chat</motion.a></p>
+      <p className="max-width text-center">If you've got this far maybe you'd like to know more about me? <br /> We should <motion.a whileHover={{ scale: 1.05 }} href="mailto:fanning@hey.com" target="_blank">have a chat</motion.a></p>
       <div className="social-links">
         <motion.a whileHover={{ scale: 1.1 }} href="https://www.linkedin.com/in/ben-fanning/" className="social-link" rel="noreferrer" target="_blank">
           <LinkedinSVG />
